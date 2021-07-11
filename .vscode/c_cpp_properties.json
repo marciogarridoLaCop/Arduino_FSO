@@ -1,0 +1,66 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/include",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/src",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/SD",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/RTClib",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/Adafruit ADS1X15",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/Adafruit BusIO",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
+                "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/TinyWireM",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/include",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/src",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/SD",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/RTClib",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/Adafruit ADS1X15",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/Adafruit BusIO",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/uno/TinyWireM",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=50101",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "/Users/marciogarrido/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
