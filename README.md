@@ -1,29 +1,42 @@
-# README #
+README # marciogarrido@id.uff.br
+What is this repository for?
+1 - Install Visual Studio Code
 
-This README would normally document whatever steps are necessary to get your application up and running.
+2 - Install PlataformIO from Visual Studio Code Extensions
 
-### What is this repository for? ###
+2 - Install Ads 1115 Lib from PlataformIO Librairies
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+3 - Install RTC lib from PlataformIO Librairies
 
-### How do I get set up? ###
+4 - Install Bitbucket repo
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Bitbucket install on Vs Code
+Try following steps,
 
-### Contribution guidelines ###
+Create a new repository in bitBucket
 
-* Writing tests
-* Code review
-* Other guidelines
+copy, clone URL
 
-### Who do I talk to? ###
+open VS code and Click "New Window" in File menu
 
-* Repo owner or admin
-* Other community or team contact
+Click "clone repository" under Start in Welcome window or in the source control tab
+
+Paste clone URL
+
+select location folder (don't create project folder manually, it will be created auromatically)
+
+a window open for authentication
+
+Now you can add new files or copy existing one
+
+In "Terminal" menu click new terminal
+
+In the new terminal set following git command
+
+git config --global user.email "you@example.com"
+
+git config --global user.name "Your Name"
+
+after changes , commit
+
+now push
