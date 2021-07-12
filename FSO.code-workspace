@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "arduino_repo",
+			"path": "../../../../../Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo"
+		}
+	],
+	"settings": {}
+}
