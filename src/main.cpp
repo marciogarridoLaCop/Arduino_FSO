@@ -1,9 +1,6 @@
 /* DISSERTACAO MESTRADO ENGENHARIA ELETRICA E TELECOMUNICACOES - UFF 2018.2 
    ALUNO:MARCIO ALEXANDRE DIAS GARRIDO
    PROFESSOR DR. VINICIUS NUNES
-   AS ENTRADAS ANALOGICAS, NO CASO DO ARDUINO UNO, POSSUEM UMA RESOLUCAO DE 10 BITS PARA CONVERSAO ANALOGICA DIGITAL.
-   NESTE MICROCONTROLADOR,ISSO GERA UMA RESOLUCAO DE 5 VOLTS / 1024 UNIDADES.
-   OU SEJA, 0,0049 VOLTS. NO CASO,4.9 mV POR UNIDADE
 */
 #include <Arduino.h>
 #include <Wire.h>
@@ -16,6 +13,7 @@ RTC_DS1307 RTC;
 #include <photodetector16.h>
 File dataFile;
 DateTime now;
+unsigned long tempo = 0;
 void setup() {
   Wire.begin();
   RTC.begin();
@@ -49,7 +47,9 @@ void setup() {
 }
 void loop()
 {
-  delay(2000);
+  tempo = millis()
+  while(millis() < tempo + 2000) {
+  }
   now = RTC.now();
   for (int i = 0; i <=3 ; i++) {
   Serial.print("Photo : ");
