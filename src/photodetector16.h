@@ -5,13 +5,12 @@ BIBLIOTECA DE LEITURA 16 BITS
 RESOLUCAO DE 5 VOLTS / 1024 UNIDADES.
 0,0049 VOLTS
 */
-
 #include <Arduino.h>
 #include <Adafruit_ADS1X15.h>
 Adafruit_ADS1X15 ads;
 double vx,kx=0; //
 const float mx = 0.1875F;
-int16_t adc0;
+int adc0;
 
 
 float lerphoto(int porta)
@@ -20,7 +19,7 @@ float lerphoto(int porta)
   ads.begin();
   adc0 = ads.readADC_SingleEnded(porta);
   vx = (adc0 * mx);
-  vx=vx/kx; // Convert D/A
+  vx = vx/kx; // Convert D/A
   if (vx > 5)
     vx = 0;
   return vx;

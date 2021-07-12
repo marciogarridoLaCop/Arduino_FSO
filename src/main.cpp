@@ -10,11 +10,15 @@ RTC_DS1307 RTC;
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
-#include <photodetector16.h>
+#include <photodetector10.h>
 File dataFile;
 DateTime now;
 unsigned long tempo = 0;
+int ix;
+
 void setup() {
+ 
+  Serial.begin(9600);       
   Wire.begin();
   RTC.begin();
   if (! RTC.isrunning()) {
@@ -47,14 +51,20 @@ void setup() {
 }
 void loop()
 {
-  tempo = millis()
-  while(millis() < tempo + 2000) {
+  tempo = millis();
+  while(millis() < tempo + 500) {
   }
-  now = RTC.now();
-  for (int i = 0; i <=3 ; i++) {
-  Serial.print("Photo : ");
+  //now = RTC.now();
+  for (int i = 0; i <=4 ; i++) {
+  Serial.print(" Photo");
+  Serial.print(" -> ");
   Serial.print(i);
+  Serial.print(" Valor: ");
   Serial.print(lerphoto(i));
-  Serial.read();
+  if ((i) == 4) {
+    Serial.println();
   }
+  
+  }
+
 }
