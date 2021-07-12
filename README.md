@@ -1,6 +1,8 @@
-Developer Vs Code
-README # marciogarrido@id.uff.br
-What is this repository for?
+# README # marciogarrido@id.uff.br
+
+
+### What is this repository for? ###
+
 1 - Install Visual Studio Code
 
 2 - Install PlataformIO from Visual Studio Code Extensions
@@ -11,7 +13,8 @@ What is this repository for?
 
 4 - Install Bitbucket repo
 
-Bitbucket install on Vs Code
+### Bitbucket install  on Vs Code ###
+
 Try following steps,
 
 Create a new repository in bitBucket
