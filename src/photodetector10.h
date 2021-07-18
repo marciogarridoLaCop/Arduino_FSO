@@ -8,7 +8,7 @@ XXX: this will not work properly for other clock speeds, and
 this code should use F_CPU to determine the prescaled factor.
 */
 
-float vx,kx=0; //
+
 int valorLido = 0; //Ler valor porta
 float tensao = 0; //Valor convertido em volts (V)
 
