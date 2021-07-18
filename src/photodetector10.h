@@ -13,7 +13,7 @@ int valorLido = 0; //Ler valor porta
 float tensao = 0; //Valor convertido em volts (V)
 
 
-float lerphoto(int porta){
+float lerphoto10(int porta){
   valorLido = analogRead(porta);
   tensao = valorLido * (5.0/1023.0); //Converter valores em volts 
   if (tensao > 5)
