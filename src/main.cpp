@@ -2,10 +2,7 @@
    ALUNO:MARCIO ALEXANDRE DIAS GARRIDO
    PROFESSOR DR. VINICIUS NUNES
 */
-#include <Arduino.h>
-#include <Adafruit_ADS1X15.h>
-Adafruit_ADS1X15 ads;
-#include <Wire.h>
+
 #include "RTClib.h"
 const int chipSelect = 10;
 RTC_DS1307 RTC;
@@ -16,11 +13,6 @@ RTC_DS1307 RTC;
 File dataFile;
 DateTime now;
 unsigned long tempo = 0;
-// declaração das variáveis de entrada analogicas
-int16_t adc0, adc1, adc2, adc3;
-// declaração das variáveis de armazemento dos valores
-double val1, val2, val3, val4, val5, k,k2 = 0; //
-const float multiplier = 0.1875F;
 
 void setup() {
  
@@ -56,17 +48,6 @@ void setup() {
  // dataFile.close();
 //}
 
-// leitura do primeiro photodetector
-float lerphoto1()
-{
- adc0 = ads.readADC_SingleEnded(3);
-  val1 = (adc0 * multiplier);
-  //  analogRead(analogPin1);  // leitura da porta A0
-   val1=val1/k; // Convert D/A
-  if (val1 > 5)
-    val1 = 0;
-  return val1;
-}
 
 void loop()
 {
