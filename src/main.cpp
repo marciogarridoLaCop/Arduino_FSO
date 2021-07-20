@@ -1,8 +1,7 @@
-/* DISSERTACAO MESTRADO ENGENHARIA ELETRICA E TELECOMUNICACOES - UFF 2018.2 
+/* DISSERTACAO DE MESTRADO EM ENGENHARIA ELETRICA E TELECOMUNICACOES - UFF 2018.2 
    ALUNO:MARCIO ALEXANDRE DIAS GARRIDO
    PROFESSOR DR. VINICIUS NUNES
 */
-
 #include "RTClib.h"
 const int chipSelect = 10;
 RTC_DS1307 RTC;
@@ -25,8 +24,7 @@ void gerar_texto(int retardo)
   while (millis() < tempo + retardo)
   {
   //Aguarda sem parar o processamento
-  }
-  
+  } 
   Serial.print(" Photo Central");
   Serial.print(" -> ");
   Serial.print(0);
