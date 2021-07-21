@@ -70,6 +70,6 @@ void gerar_valores(int retardo)
 
 void loop()
 {
-  gerar_texto(500);
-  gerar_valores(500);
+  //gerar_texto(500);
+  gerar_valores(1000);
 }
