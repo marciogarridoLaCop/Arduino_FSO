@@ -9,14 +9,14 @@ this code should use F_CPU to determine the prescaled factor.
 */
 
 
-int valorLido = 0; //Ler valor porta
-float tensao = 0; //Valor convertido em volts (V)
+int readvalue = 0; //Ler valor porta
+float volts = 0; //Valor convertido em volts (V)
 
 
-float lerphoto10(int porta){
-  valorLido = analogRead(porta);
-  tensao = valorLido * (5.0/1023.0); //Converter valores em volts 
-  if (tensao > 5)
-    tensao = 0;
-  return tensao;
+float readphoto10(int porta){
+  readvalue = analogRead(porta);
+  volts = readvalue * (5.0/1023.0); //Converter valores em volts 
+  if (volts > 5)
+    volts = 0;
+  return volts;
 }

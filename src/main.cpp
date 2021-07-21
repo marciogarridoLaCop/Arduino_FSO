@@ -29,14 +29,14 @@ void gerar_texto(int retardo)
   Serial.print(" -> ");
   Serial.print(0);
   Serial.print(" Valor: ");
-  Serial.print(lerphoto10(0));
+  Serial.print(readphoto10(0));
   for (int i = 1; i <= 3; i++)
   {
     Serial.print(" Photo");
     Serial.print(" -> ");
     Serial.print(i);
     Serial.print(" Valor: ");
-    Serial.print(lerphoto10(i));
+    Serial.print(readphoto10(i));
     if ((i) == 3)
     {
       Serial.println();
@@ -54,11 +54,11 @@ void gerar_valores(int retardo)
   }
   Serial.print(" ");
   Serial.print(0);
-  Serial.print(lerphoto10(0));
+  Serial.print(readphoto10(0));
   Serial.print(" ");
   for (int i = 1; i <= 3; i++)
   {
-    Serial.print(lerphoto10(i));
+    Serial.print(readphoto10(i));
     Serial.print(" ");
     if ((i) == 3)
     {
