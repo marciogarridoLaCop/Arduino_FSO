@@ -13,7 +13,8 @@ File dataFile;
 DateTime now;
 unsigned long tempo = 0;
 int incomingByte = 0;	// para dados seriais que estão entrando
-
+int passos,leitura= 0;
+String conteudo = "";
 void setup()
 {
   Serial.begin(9600);
@@ -55,7 +56,7 @@ void gerar_valores(int retardo)
   }
   //Serial.print(" ");
   //Serial.print(0);
-  Serial.print(readphoto10(0));
+  Serial.print(readphoto10(0),2);
   //Serial.print(" ");
   /*
   for (int i = 1; i <= 3; i++)
@@ -71,20 +72,31 @@ void gerar_valores(int retardo)
   Serial.println();
 }
 
+void leStringSerial(){
+  Serial.flush();
+  char caractere;
+  conteudo="";
+  // Enquanto receber algo pela serial
+  while(Serial.available() > 0) {
+    // Lê byte da serial
+    caractere = Serial.read();
+    // detecta o enter
+    if (caractere == '\n'){
+      // Concatena valores
+     gerar_valores(0);
+      conteudo.concat(caractere);
+    }
+    // Aguarda buffer serial ler próximo caractere
+    delay(10);
+  }  
+}
+
 void loop()
 {
-  // envia dados apenas quando dados forem também recebidos:
-	//if (Serial.available() > 0) {
-		// lê o byte que está entrando:
-	//	incomingByte = Serial.read();
-
-		// diga o que você recebeu:
-	//	Serial.print("Eu recebi : ");
-	//	Serial.println(incomingByte, DEC);
   
-  if(Serial.available()) { // se estiver recebendo algo pela serial
-  Serial.read(); 
-  //gerar_texto(500);
-  gerar_valores(1000);
-  }
+  if (Serial.available())
+    {
+    leStringSerial();
+    }
+  
 }
