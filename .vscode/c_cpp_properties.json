@@ -15,7 +15,7 @@
                 "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/RTClib",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
-                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",
                 "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                 "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/TinyWireM",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
@@ -34,7 +34,7 @@
                     "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/RTClib",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
-                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",
                     "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                     "/Users/marciogarrido/Dropbox/Mestrado Engenharia/Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo/.pio/libdeps/UNO/TinyWireM",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
@@ -46,18 +46,18 @@
             },
             "defines": [
                 "PLATFORMIO=50101",
-                "ARDUINO_AVR_UNO",
+                "ARDUINO_AVR_MEGA",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
                 "ARDUINO=10808",
-                "__AVR_ATmega328P__",
+                "__AVR_ATmega1280__",
                 ""
             ],
             "cStandard": "c11",
             "cppStandard": "c++11",
             "compilerPath": "/Users/marciogarrido/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
             "compilerArgs": [
-                "-mmcu=atmega328p",
+                "-mmcu=atmega1280",
                 ""
             ]
         }
