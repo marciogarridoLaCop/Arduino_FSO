@@ -8,30 +8,29 @@ XXX: this will not work properly for other clock speeds, and
 this code should use F_CPU to determine the prescaled factor.
 */
 
-
 int readvalue = 0; //Ler valor porta
-float volts = 0; //Valor convertido em volts (V)
+float volts = 0;   //Valor convertido em volts (V)
 String information = "";
 double x_position, steps = 0;
 unsigned long time = 0;
 bool start;
 float axle = 30;
 
-
-float readphoto10(int porta){
-  readvalue = analogRead(porta);
-  volts = readvalue * (5.0/1023.0); //Converter valores em volts 
-  if (volts > 5)
-    volts = 0;
-  return volts;
+float readphoto10(int porta)
+{
+	readvalue = analogRead(porta);
+	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
+	if (volts > 5)
+		volts = 0;
+	return volts;
 }
 void generete_values(int detector, int delay)
 {
 	if (start == false)
 	{
 		start = true;
-	    x_position = (-(axle / 2));
-		
+		x_position = (-(axle / 2));
+
 		switch (detector)
 		{
 		case 1:
@@ -63,6 +62,34 @@ void generete_values(int detector, int delay)
 			Serial.print("  y3");
 			Serial.print(" ");
 			Serial.print("  y4");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+		case 5:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("  y2");
+			Serial.print(" ");
+			Serial.print("  y3");
+			Serial.print(" ");
+			Serial.print("  y4");
+			Serial.print(" ");
+			Serial.print("  y5");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+			case 6:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("  y2");
+			Serial.print(" ");
+			Serial.print("  y3");
+			Serial.print(" ");
+			Serial.print("  y4");
+			Serial.print(" ");
+			Serial.print("  y5");
+			Serial.print(" ");
+			Serial.print("  y6");
 			Serial.print(" ");
 			Serial.print("   x");
 			break;
@@ -127,7 +154,7 @@ void generete_values(int detector, int delay)
 	}
 }
 
-void read_serial_string(int n_off_detector)
+void read_serial_string(int sensors)
 {
 	if (start == false)
 		Serial.flush();
@@ -135,15 +162,12 @@ void read_serial_string(int n_off_detector)
 	information = "";
 	while (Serial.available() > 0)
 	{
-		// read byte
 		character = Serial.read();
 		// check if return keyboard ware pressed
 		if (character == '\n')
 		{
-			// Concat values
-			generete_values(n_off_detector, 0);
+			generete_values(sensors, 0);
 			information.concat(character);
-			// wait buffer to read the next packet
 			delay(10);
 		}
 	}
