@@ -19,6 +19,6 @@ void loop()
 {
 	if (Serial.available())
 	{
-		read_sensor(2);
+		read_sensor(4);
 	}
 }
