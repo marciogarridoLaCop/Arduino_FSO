@@ -15,6 +15,8 @@ String information = "";
 double x_position, steps = 0;
 unsigned long time = 0;
 bool start;
+float axle = 30;
+
 
 float readphoto10(int porta){
   readvalue = analogRead(porta);
@@ -28,6 +30,8 @@ void generete_values(int detector, int delay)
 	if (start == false)
 	{
 		start = true;
+	    x_position = (-(axle / 2));
+		
 		switch (detector)
 		{
 		case 1:
