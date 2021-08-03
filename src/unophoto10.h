@@ -154,7 +154,7 @@ void generete_values(int detector, int delay)
 	}
 }
 
-void read_serial_string(int sensors)
+void read_sensor(int sensors)
 {
 	if (start == false)
 		Serial.flush();
