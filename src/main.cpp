@@ -11,21 +11,18 @@ RTC_DS1307 RTC;
 #include <photodetector10.h>
 File dataFile;
 DateTime now;
-float axle = 30;
-
 
 void setup()
 {
+	axle=30;
 	Serial.begin(9600);
 	Serial.flush();
-	Serial.println("Press enter to reading values");
-	x_position = (-(axle / 2));
+	Serial.println("Press enter to reading values");	
 }
-
 void loop()
 {
 	if (Serial.available())
 	{
-		read_serial_string(3);
+		read_serial_string(2);
 	}
 }
