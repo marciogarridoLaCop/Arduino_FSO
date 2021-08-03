@@ -1,5 +1,5 @@
 # README ABOUT ARDUINO SETTINGS# marciogarrido@id.uff.br
-https://img.shields.io/badge/<FSO>-<Arduino Project>-<blue>
+https://img.shields.io/badge/FSO-Arduino%20Project-green
 <h4 align="center"> 
 	🚧  🚀 Em construção...🚀  🚧
 </h4>
