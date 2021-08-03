@@ -1,9 +1,9 @@
 # README ABOUT ARDUINO SETTINGS# marciogarrido@id.uff.br
-
+https://img.shields.io/badge/<FSO>-<Arduino Project>-<blue>
 <h4 align="center"> 
 	🚧  🚀 Em construção...🚀  🚧
 </h4>
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>&style=<STYLE>&logo=<LOGO>
+
 ### Firsts steps to configure your application ###
 
 1 - Choose the library for your project.
