@@ -13,24 +13,25 @@ File dataFile;
 DateTime now;
 unsigned long time = 0;
 String information = "";
-double x_position,steps=0;
-float axle =55;
+double x_position, steps = 0;
+float axle = 30;
+bool start;
 
 void setup()
 {
-	Serial.begin(9600); 
+	Serial.begin(9600);
 	Serial.flush();
-	Serial.println ("Press enter to reading values");
-	x_position=(-(axle/2));
-} 
+	Serial.println("Press enter to reading values");
+	x_position = (-(axle / 2));
+}
 
 void generate_text(int delay)
 {
 	time = millis();
 	while (millis() < time + delay)
 	{
-	//Wait without stop processesing 
-	} 
+		//Wait without stop processesing
+	}
 	Serial.print(" Center Photo");
 	Serial.print(" -> ");
 	Serial.print(0);
@@ -51,68 +52,132 @@ void generate_text(int delay)
 	Serial.println();
 }
 
-void generete_values(int delay)
+void generete_values(int detector, int delay)
 {
-	time = millis();
-	while (millis() < time + delay)
+	if (start == false)
 	{
-	//Aguarda sem parar o processamento
-	}
-	 
-	
-	if (steps > abs((x_position*2))) {
-		Serial.print("Finished");
-	}
-	else
-	{
-	Serial.print(readphoto10(0),2);
-	Serial.print(" ");
-	Serial.print(x_position+steps);
-	steps=steps+1;
-	}
-	
-	/*
-	for (int i = 1; i <= 3; i++)
-	{
-		Serial.print(readphoto10(i));
-		Serial.print(" ");
-		if ((i) == 3)
+		start = true;
+		switch (detector)
 		{
+		case 1:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+		case 2:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("  y2");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+		case 3:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("  y2");
+			Serial.print(" ");
+			Serial.print("  y3");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+		case 4:
+			Serial.print("  y1");
+			Serial.print(" ");
+			Serial.print("  y2");
+			Serial.print(" ");
+			Serial.print("  y3");
+			Serial.print(" ");
+			Serial.print("  y4");
+			Serial.print(" ");
+			Serial.print("   x");
+			break;
+		}
+		Serial.println("");
+	}
+
+	{
+		time = millis();
+		while (millis() < time + delay)
+		{
+			//Aguarda sem parar o processamento
+		}
+		if (detector == 1)
+		{
+			if (steps > abs((x_position * 2)))
+			{
+				steps = steps + 1;
+				Serial.print("Finished");
+				Serial.print(" ");
+				Serial.println();
+			}
+			else
+			{
+				Serial.print(readphoto10(detector - 1), 2);
+				Serial.print(" ");
+				Serial.print(x_position + steps - 1);
+				Serial.println();
+			}
+		}
+
+		if (detector > 1)
+		{
+			if (steps > abs((x_position * 2)))
+			{
+				steps = steps + 1;
+				Serial.print("Finished");
+				Serial.print(" ");
+				Serial.println();
+			}
+			else
+			{
+				for (int i = 1; i <= detector; i++)
+				{
+					Serial.print(readphoto10(i - 1), 2);
+					Serial.print(" ");
+					if ((i) == detector)
+					{
+					}
+				}
+				steps = steps + 1;
+			}
+		}
+		if (steps > abs((x_position * 2) - 1))
+		{
+		}
+		else
+		{
+			Serial.print(x_position + steps - 1);
 			Serial.println();
 		}
 	}
-	*/
-	Serial.println();
 }
 
-
-
-void read_serial_string(){
-	Serial.flush();
+void read_serial_string(int n_off_detector)
+{
+	if (start == false)
+		Serial.flush();
 	char character;
-	information="";
-	while(Serial.available() > 0) {
+	information = "";
+	while (Serial.available() > 0)
+	{
 		// read byte
 		character = Serial.read();
 		// check if return keyboard ware pressed
-		if (character == '\n'){
+		if (character == '\n')
+		{
 			// Concat values
-		 generete_values(0);
-		 information.concat(character);
-		// wait buffer to read the next packet
-		delay(10);
-
-		}  
+			generete_values(n_off_detector, 0);
+			information.concat(character);
+			// wait buffer to read the next packet
+			delay(10);
+		}
 	}
 }
-
 
 void loop()
 {
 	if (Serial.available())
-	 
-		{
-	 read_serial_string();
-	 
-		}
+	{
+		read_serial_string(3);
+	}
 }
