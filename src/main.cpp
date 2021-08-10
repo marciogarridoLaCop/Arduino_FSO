@@ -9,7 +9,7 @@
 
 void setup()
 {
-	axle=30;
+	axle=100;
 	Serial.begin(9600);
 	Serial.flush();
 	Serial.println("Press enter to reading values");	
@@ -19,6 +19,6 @@ void loop()
 {
 	if (Serial.available())
 	{
-		read_sensor(4);
+		read_sensor(2);
 	}
 }
