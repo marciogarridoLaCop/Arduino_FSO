@@ -2,10 +2,10 @@
 MARCIO GARRIDO 2021
 BIBLIOTECA DE TEMERATURA
 */
-#include <temperature.h>
+#include <Thermistor.h>
 
-Thermistor temp(4); // Which port the Thermistor is connected
-Thermistor temp(5); // Which port the Thermistor is connected
+Thermistor temp1(4); // Which port the Thermistor is connected
+Thermistor temp2(5); // Which port the Thermistor is connected
 
 
 float temperature_base()

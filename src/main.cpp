@@ -5,6 +5,7 @@
 
 #include <SPI.h>
 #include <unophoto10.h>
+//#include <Thermistor.h>
 
 
 void setup()

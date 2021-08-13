@@ -10,14 +10,14 @@
             "includePath": [
                 "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
                 "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
+                "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
-                "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/Users/marciogarrido/.platformio/packages/tool-unity",
                 ""
             ],
@@ -26,14 +26,14 @@
                 "path": [
                     "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
                     "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
+                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
-                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/Users/marciogarrido/.platformio/packages/tool-unity",
                     ""
                 ]
