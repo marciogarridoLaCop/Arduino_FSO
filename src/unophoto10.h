@@ -7,14 +7,27 @@ set a2d prescaled factor to 128
 XXX: this will not work properly for other clock speeds, and
 this code should use F_CPU to determine the prescaled factor.
 */
-
+const int pinTermistor1 = A6;
+const int pinTermistor2= A5;
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
-double x_position, steps = 0;
+double x_position, steps,t = 0;
 unsigned long time = 0;
 bool start;
 float axle = 30;
+// Parametros do termistor
+const double beta = 3960.0;
+const double r0 = 100000.0;
+const double t0 = 273.0 + 25.0;
+const double rx = r0 * exp(-beta / t0);
+
+// Parâmetros do circuito
+const double vcc = 4.95;
+const double R = 100000.0;
+
+// Numero de amostras na leitura
+const int nAmostras = 10;
 
 float readphoto10(int porta)
 {
@@ -23,6 +36,48 @@ float readphoto10(int porta)
 	if (volts > 5)
 		volts = 0;
 	return volts;
+}
+float get_temp1(int atraso)
+{
+	time = millis();
+	while (millis() < time + atraso) // Le o sensor algumas vezes
+	{
+		int soma = 0;
+		for (int i = 0; i < nAmostras; i++)
+		{
+			soma += analogRead(pinTermistor1);
+			delay(10);
+		}
+		// Determina a resistência do termistor
+		double v = (vcc * soma) / (nAmostras * 1024.0);
+		double rt = (vcc * R) / v - R;
+
+		// Calcula a temperatura
+	    t=beta / log(rt / rx);
+		t = t - 273.0;
+	}
+	return t;
+}
+float get_temp2(int atraso)
+{
+	time = millis();
+	while (millis() < time + atraso) // Le o sensor algumas vezes
+	{
+		int soma = 0;
+		for (int i = 0; i < nAmostras; i++)
+		{
+			soma += analogRead(pinTermistor2);
+			delay(10);
+		}
+		// Determina a resistência do termistor
+		double v = (vcc * soma) / (nAmostras * 1024.0);
+		double rt = (vcc * R) / v - R;
+
+		// Calcula a temperatura
+	    t=beta / log(rt / rx);
+		t = t - 273.0;
+	}
+	return t;
 }
 void generete_values(int detector, int delay)
 {
@@ -38,7 +93,12 @@ void generete_values(int detector, int delay)
 			Serial.print(" ");
 			Serial.print("  y1");
 			Serial.print(" ");
-			
+			Serial.print("  T1");
+			Serial.print(" ");
+			Serial.print("  T2");
+			Serial.print(" ");
+
+
 			break;
 		case 2:
 			Serial.print("   x");
@@ -47,7 +107,12 @@ void generete_values(int detector, int delay)
 			Serial.print(" ");
 			Serial.print("  y2");
 			Serial.print(" ");
-			
+			Serial.print("  T1");
+			Serial.print(" ");
+			Serial.print("  T2");
+			Serial.print(" ");
+
+
 			break;
 		case 3:
 			Serial.print("   x");
@@ -57,6 +122,11 @@ void generete_values(int detector, int delay)
 			Serial.print("  y2");
 			Serial.print(" ");
 			Serial.print("  y3");
+			Serial.print("  T1");
+			Serial.print(" ");
+			Serial.print("  T2");
+			Serial.print(" ");
+
 			break;
 		case 4:
 			Serial.print("   x");
@@ -68,6 +138,11 @@ void generete_values(int detector, int delay)
 			Serial.print("  y3");
 			Serial.print(" ");
 			Serial.print("  y4");
+			Serial.print("  T1");
+			Serial.print(" ");
+			Serial.print("  T2");
+			Serial.print(" ");
+
 			break;
 		case 5:
 			Serial.print("   x");
@@ -82,7 +157,7 @@ void generete_values(int detector, int delay)
 			Serial.print(" ");
 			Serial.print("  y5");
 			break;
-			case 6:
+		case 6:
 			Serial.print("   x");
 			Serial.print(" ");
 			Serial.print("  y1");
@@ -96,6 +171,11 @@ void generete_values(int detector, int delay)
 			Serial.print("  y5");
 			Serial.print(" ");
 			Serial.print("  y6");
+			Serial.print("  T1");
+			Serial.print(" ");
+			Serial.print("  T2");
+			Serial.print(" ");
+
 			break;
 		}
 		Serial.println("");
@@ -119,7 +199,7 @@ void generete_values(int detector, int delay)
 			else
 			{
 				Serial.print(x_position + steps - 1);
-			  Serial.print(" ");
+				Serial.print(" ");
 				Serial.print(readphoto10(detector - 1), 2);
 				Serial.println();
 			}
@@ -136,8 +216,8 @@ void generete_values(int detector, int delay)
 			}
 			else
 			{
-			Serial.print(x_position + steps - 1);
-			Serial.print(" ");
+				Serial.print(x_position + steps - 1);
+				Serial.print(" ");
 				for (int i = 1; i <= detector; i++)
 				{
 					Serial.print(readphoto10(i - 1), 2);
@@ -154,7 +234,10 @@ void generete_values(int detector, int delay)
 		}
 		else
 		{
-			
+			Serial.print(get_temp1(1));
+			Serial.print(" ");
+			Serial.print(get_temp2(1));
+			Serial.print(" ");
 			Serial.println();
 		}
 	}

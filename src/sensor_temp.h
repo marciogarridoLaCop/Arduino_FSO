@@ -4,7 +4,8 @@ BIBLIOTECA DE TEMERATURA
 */
 
 // Conexão do termistor
-const int pinTermistor = A6;
+
+  char clat[11];
 
 // Parâmetros do termistor
 const double beta = 3960.0;
@@ -17,12 +18,10 @@ const double vcc = 4.95;
 const double R = 100000.0;
 
 // Numero de amostras na leitura
-const int nAmostras = 5;
+const int nAmostras = 30;
 
-// Laço perpétuo
-void read_temp(int atraso)
+void get_temp(int atraso)
 {
-
   time = millis();
   while (millis() < time + atraso) // Le o sensor algumas vezes
   {
@@ -39,6 +38,17 @@ void read_temp(int atraso)
     // Calcula a temperatura
     double t = beta / log(rt / rx);
     t = t - 273.0;
-    Serial.println(t, 1);
+  //  Serial.println(t, 1);
+    dtostrf(t,2,2,clat);
+    Serial.println(clat);
+    Serial.read();
   }
+}
+unsigned int buffer_pos = 0;
+
+// Leitura
+void read_temp(int atraso){
+
+get_temp(1);
+
 }

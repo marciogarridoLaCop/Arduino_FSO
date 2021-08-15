@@ -5,13 +5,12 @@
 
 #include <SPI.h>
 #include <unophoto10.h>
-#include <sensor_temp.h>
 
 
 
 void setup()
 {
-	axle=100;
+	axle=50;
 	Serial.begin(9600);
 	Serial.flush();
 	Serial.println("Press enter to reading values");	
@@ -21,7 +20,7 @@ void loop()
 {
 	if (Serial.available())
 	{
-		read_sensor(2);
-		read_temp(100);
+	read_sensor(2);
+
 	}
 }
