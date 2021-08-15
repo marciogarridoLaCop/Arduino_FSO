@@ -5,7 +5,8 @@
 
 #include <SPI.h>
 #include <unophoto10.h>
-//#include <Thermistor.h>
+#include <sensor_temp.h>
+
 
 
 void setup()
@@ -21,5 +22,6 @@ void loop()
 	if (Serial.available())
 	{
 		read_sensor(2);
+		read_temp(100);
 	}
 }
