@@ -18,7 +18,6 @@ const double r0 = 100000.0;
 const double t0 = 273.0 + 25.0;
 const double rx = r0 * exp(-beta / t0);
 
-
 // Parâmetros do circuito
 const double vcc = 4.95;
 const double R = 100000.0;
@@ -87,95 +86,98 @@ void generete_values(int detector, int delay)
 		{
 		case 1:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  T1");
-			Serial.print(" ");
-			Serial.print("  T2");
-			Serial.print(" ");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print(",T2");
 
 			break;
 		case 2:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  y2");
-			Serial.print(" ");
-			Serial.print("  T1");
-			Serial.print(" ");
-			Serial.print("  T2");
-			Serial.print(" ");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("y2");
+			Serial.print(",");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print("T2");
 
 			break;
 		case 3:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  y2");
-			Serial.print(" ");
-			Serial.print("  y3");
-			Serial.print("  T1");
-			Serial.print(" ");
-			Serial.print("  T2");
-			Serial.print(" ");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("y2");
+			Serial.print(",");
+			Serial.print("y3");
+			Serial.print(",");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print("T2");
+			Serial.print(",");
 
 			break;
 		case 4:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  y2");
-			Serial.print(" ");
-			Serial.print("  y3");
-			Serial.print(" ");
-			Serial.print("  y4");
-			Serial.print("  T1");
-			Serial.print(" ");
-			Serial.print("  T2");
-			Serial.print(" ");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("y2");
+			Serial.print(",");
+			Serial.print("y3");
+			Serial.print(",");
+			Serial.print("y4");
+			Serial.print(",");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print("T2");
 
 			break;
 		case 5:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  y2");
-			Serial.print(" ");
-			Serial.print("  y3");
-			Serial.print(" ");
-			Serial.print("  y4");
-			Serial.print(" ");
-			Serial.print("  y5");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("y2");
+			Serial.print(",");
+			Serial.print("y3");
+			Serial.print(",");
+			Serial.print("y4");
+			Serial.print(",");
+			Serial.print("y5");
+			Serial.print(",");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print("T2");
+			Serial.print(",");
 			break;
 		case 6:
 			Serial.print("Sample");
-			Serial.print(" ");
-			Serial.print("  y1");
-			Serial.print(" ");
-			Serial.print("  y2");
-			Serial.print(" ");
-			Serial.print("  y3");
-			Serial.print(" ");
-			Serial.print("  y4");
-			Serial.print(" ");
-			Serial.print("  y5");
-			Serial.print(" ");
-			Serial.print("  y6");
-			Serial.print("  T1");
-			Serial.print(" ");
-			Serial.print("  T2");
-			Serial.print(" ");
+			Serial.print(",");
+			Serial.print("y1");
+			Serial.print(",");
+			Serial.print("y2");
+			Serial.print(",");
+			Serial.print("y3");
+			Serial.print(",");
+			Serial.print("y4");
+			Serial.print(",");
+			Serial.print("y5");
+			Serial.print(",");
+			Serial.print("y6");
+			Serial.print("T1");
+			Serial.print(",");
+			Serial.print("T2");
 
 			break;
 		}
 		Serial.println("");
 	}
-{
+	{
 		time = millis();
 		while (millis() < time + delay)
 		{
@@ -191,10 +193,10 @@ void generete_values(int detector, int delay)
 			}
 			else
 			{
-				Serial.print(steps);
-				Serial.print(" ");
+				Serial.print(steps, 0);
+				Serial.print(",");
 				Serial.print(readphoto10(detector - 1), 2);
-				Serial.println();
+				Serial.print(",");
 				steps = steps + 1;
 			}
 		}
@@ -210,12 +212,12 @@ void generete_values(int detector, int delay)
 			}
 			else
 			{
-				Serial.print(steps);
-				Serial.print(" ");
+				Serial.print(steps, 0);
+				Serial.print(",");
 				for (int i = 1; i <= detector; i++)
 				{
 					Serial.print(readphoto10(i - 1), 2);
-					Serial.print(" ");
+					Serial.print(",");
 					if ((i) == detector)
 					{
 					}
@@ -229,9 +231,9 @@ void generete_values(int detector, int delay)
 		else
 		{
 			Serial.print(get_temp1(1));
-			Serial.print(" ");
+			Serial.print(",");
 			Serial.print(get_temp2(1));
-			Serial.print(" ");
+			//	Serial.print(",");
 			Serial.println();
 		}
 	}
@@ -239,6 +241,7 @@ void generete_values(int detector, int delay)
 
 void read_sensor(int sensors)
 {
+	Serial.flush();
 
 	generete_values(sensors, 0);
 	delay(1);
