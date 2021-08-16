@@ -20,7 +20,7 @@ void loop()
 {
 	if (Serial.available())
 	{
-	read_sensor(4);
+	read_sensor(1);
 
 	}
 }
