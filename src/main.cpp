@@ -6,8 +6,6 @@
 #include <SPI.h>
 #include <unophoto10step.h>
 
-
-
 void setup()
 {
 	axle=100;
@@ -16,6 +14,7 @@ void setup()
 	Serial.println("Press enter to reading values");	
 	
 }
+
 void loop()
 {
 	if (Serial.available())
