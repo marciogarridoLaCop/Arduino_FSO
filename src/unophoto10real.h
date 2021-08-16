@@ -3,8 +3,8 @@
 MARCIO GARRIDO 2021
 BIBLIOTECA DE LEITURA 10 BITS
 */
-const int pinTermistor1 = A6;
-const int pinTermistor2 = A9;
+const int pinTermistor1 = A4;
+const int pinTermistor2 = A5;
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
@@ -17,6 +17,7 @@ const double beta = 3960.0;
 const double r0 = 100000.0;
 const double t0 = 273.0 + 25.0;
 const double rx = r0 * exp(-beta / t0);
+
 
 // Parâmetros do circuito
 const double vcc = 4.95;
