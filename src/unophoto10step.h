@@ -8,7 +8,7 @@ XXX: this will not work properly for other clock speeds, and
 this code should use F_CPU to determine the prescaled factor.
 */
 const int pinTermistor1 = A6;
-const int pinTermistor2= A5;
+const int pinTermistor2= A9;
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";

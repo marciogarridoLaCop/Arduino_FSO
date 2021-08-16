@@ -4,13 +4,13 @@
 */
 
 #include <SPI.h>
-#include <unophoto10.h>
+#include <unophoto10real.h>
 
 
 
 void setup()
 {
-	axle=50;
+	axle=100000;
 	Serial.begin(9600);
 	Serial.flush();
 	Serial.println("Press enter to reading values");	
@@ -20,7 +20,7 @@ void loop()
 {
 	if (Serial.available())
 	{
-	read_sensor(2);
+	read_sensor(4);
 
 	}
 }
