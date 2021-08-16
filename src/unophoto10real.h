@@ -91,7 +91,7 @@ void generete_values(int detector, int delay)
 			Serial.print(",");
 			Serial.print("T1");
 			Serial.print(",");
-			Serial.print(",T2");
+			Serial.print("T2");
 
 			break;
 		case 2:

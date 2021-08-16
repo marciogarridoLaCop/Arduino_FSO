@@ -4,13 +4,13 @@
 */
 
 #include <SPI.h>
-#include <unophoto10real.h>
+#include <unophoto10step.h>
 
 
 
 void setup()
 {
-	axle=100000;
+	axle=100;
 	Serial.begin(9600);
 	Serial.flush();
 	Serial.println("Press enter to reading values");	
