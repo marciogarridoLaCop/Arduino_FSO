@@ -7,8 +7,8 @@ set a2d prescaled factor to 128
 XXX: this will not work properly for other clock speeds, and
 this code should use F_CPU to determine the prescaled factor.
 */
-const int pinTermistor1 = A6;
-const int pinTermistor2= A9;
+const int pinTermistor1 = A4;
+const int pinTermistor2= A5;
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
@@ -27,7 +27,7 @@ const double vcc = 4.95;
 const double R = 100000.0;
 
 // Numero de amostras na leitura
-const int nAmostras = 10;
+const int nAmostras = 50;
 
 float readphoto10(int porta)
 {
@@ -46,7 +46,7 @@ float get_temp1(int atraso)
 		for (int i = 0; i < nAmostras; i++)
 		{
 			soma += analogRead(pinTermistor1);
-			delay(10);
+			delay(1);
 		}
 		// Determina a resistência do termistor
 		double v = (vcc * soma) / (nAmostras * 1024.0);
@@ -67,7 +67,7 @@ float get_temp2(int atraso)
 		for (int i = 0; i < nAmostras; i++)
 		{
 			soma += analogRead(pinTermistor2);
-			delay(10);
+			delay(1);
 		}
 		// Determina a resistência do termistor
 		double v = (vcc * soma) / (nAmostras * 1024.0);

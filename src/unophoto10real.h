@@ -23,7 +23,7 @@ const double vcc = 4.95;
 const double R = 100000.0;
 
 // Numero de amostras na leitura
-const int nAmostras = 4;
+const int nAmostras = 50;
 
 float readphoto10(int porta)
 {
@@ -42,7 +42,7 @@ float get_temp1(int atraso)
 		for (int i = 0; i < nAmostras; i++)
 		{
 			soma += analogRead(pinTermistor1);
-			delay(10);
+			delay(1);
 		}
 		// Determina a resistência do termistor
 		double v = (vcc * soma) / (nAmostras * 1024.0);
@@ -63,7 +63,7 @@ float get_temp2(int atraso)
 		for (int i = 0; i < nAmostras; i++)
 		{
 			soma += analogRead(pinTermistor2);
-			delay(10);
+			delay(1);
 		}
 		// Determina a resistência do termistor
 		double v = (vcc * soma) / (nAmostras * 1024.0);
