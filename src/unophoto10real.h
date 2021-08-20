@@ -23,11 +23,13 @@ const double vcc = 4.95;
 const double R = 100000.0;
 
 // Numero de amostras na leitura
-const int nAmostras = 50;
+int nAmostras = 50;
 
-float readphoto10(int porta)
+float readphoto10(int porta, int amostras)
 {
-	readvalue = analogRead(porta);
+	for (int i = 0; i < amostras; i++){
+		readvalue += analogRead(porta);
+	}
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)
 		volts = 0;
@@ -75,7 +77,7 @@ float get_temp2(int atraso)
 	}
 	return t;
 }
-void generete_values(int detector, int delay)
+void generete_values(int detector, int delay, int amostras)
 {
 	if (start == false)
 	{
@@ -195,7 +197,7 @@ void generete_values(int detector, int delay)
 			{
 				Serial.print(steps, 0);
 				Serial.print(",");
-				Serial.print(readphoto10(detector - 1), 2);
+				Serial.print(readphoto10(detector - 1,amostras), 2);
 				Serial.print(",");
 				steps = steps + 1;
 			}
@@ -216,7 +218,7 @@ void generete_values(int detector, int delay)
 				Serial.print(",");
 				for (int i = 1; i <= detector; i++)
 				{
-					Serial.print(readphoto10(i - 1), 2);
+					Serial.print(readphoto10(i - 1,amostras), 2);
 					Serial.print(",");
 					if ((i) == detector)
 					{
@@ -239,10 +241,11 @@ void generete_values(int detector, int delay)
 	}
 }
 
-void read_sensor(int sensors)
+void read_sensor(int sensors,int amostras_photo, int amostras_temp)
 {
 	Serial.flush();
 
-	generete_values(sensors, 0);
+	generete_values(sensors,0,amostras_photo);
+	nAmostras=amostras_temp;
 	delay(1);
 }
