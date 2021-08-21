@@ -25,9 +25,10 @@ const double R = 100000.0;
 // Numero de amostras na leitura
 int nAmostras = 50;
 
-float readphoto10(int porta, int amostras)
+float readphoto10(int porta, int amostrasx)
 {
-	for (int i = 0; i < amostras; i++){
+	readvalue=0;
+	for (int i = 0; i < amostrasx; i++){
 		readvalue += analogRead(porta);
 	}
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts

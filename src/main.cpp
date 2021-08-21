@@ -8,7 +8,7 @@
 
 void setup()
 {
-	axle=25;
+	axle=25000;
 	Serial.begin(9600);
 	Serial.flush();
 	Serial.println("Press enter to reading values");	
