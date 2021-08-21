@@ -29,7 +29,7 @@ float readphoto10(int porta, int amostrasx)
 {
 	readvalue=0;
 	for (int i = 0; i < amostrasx; i++){
-		readvalue += analogRead(porta);
+		readvalue += analogRead(porta)/amostrasx;
 	}
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)

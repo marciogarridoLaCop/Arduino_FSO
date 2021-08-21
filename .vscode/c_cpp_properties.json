@@ -8,12 +8,12 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
-                "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
+                "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
+                "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
-                "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
+                "/Volumes/Macintosh HD/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
@@ -24,12 +24,12 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
-                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
+                    "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
+                    "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/standard",
-                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
+                    "/Volumes/Macintosh HD/Arduino/arduino_repo/.pio/libdeps/UNO/Adafruit BusIO",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",

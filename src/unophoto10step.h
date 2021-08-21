@@ -29,10 +29,11 @@ const double R = 100000.0;
 // Numero de amostras na leitura
 int nAmostras = 50;
 
-float readphoto10(int porta, int amostras)
+float readphoto10(int porta, int amostrasx)
 {
-	for (int i = 0; i < amostras; i++){
-		readvalue += analogRead(porta);
+	readvalue=0;
+	for (int i = 0; i < amostrasx; i++){
+		readvalue += analogRead(porta)/ amostrasx;
 	}
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)
@@ -215,14 +216,14 @@ void generete_values(int detector, int delay, int amostras)
 		{
 			if (steps > abs((x_position * 2)))
 			{
-				steps = steps + 1;
+				steps = steps + 0;
 				Serial.print("Finished");
 				Serial.print(" ");
 				Serial.println();
 			}
 			else
 			{
-				Serial.print(x_position + steps - 1,0);
+				Serial.print(x_position + steps,0);
 				Serial.print(",");
 				for (int i = 1; i <= detector; i++)
 				{
