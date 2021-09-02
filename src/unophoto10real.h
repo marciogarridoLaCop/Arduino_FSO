@@ -11,7 +11,6 @@ String information = "";
 double x_position, steps, t = 0;
 unsigned long time = 0;
 bool start;
-float axle = 30;
 // Parametros do termistor
 const double beta = 3960.0;
 const double r0 = 100000.0;
@@ -27,9 +26,10 @@ int nAmostras = 50;
 
 float readphoto10(int porta, int amostrasx)
 {
-	readvalue=0;
-	for (int i = 0; i < amostrasx; i++){
-		readvalue += analogRead(porta)/amostrasx;
+	readvalue = 0;
+	for (int i = 0; i < amostrasx; i++)
+	{
+		readvalue += analogRead(porta) / amostrasx;
 	}
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)
@@ -88,7 +88,7 @@ void generete_values(int detector, int delay, int amostras)
 		switch (detector)
 		{
 		case 1:
-			Serial.print("Sample");
+			Serial.print("x");
 			Serial.print(",");
 			Serial.print("y1");
 			Serial.print(",");
@@ -98,7 +98,7 @@ void generete_values(int detector, int delay, int amostras)
 
 			break;
 		case 2:
-			Serial.print("Sample");
+			Serial.print("x");
 			Serial.print(",");
 			Serial.print("y1");
 			Serial.print(",");
@@ -110,7 +110,7 @@ void generete_values(int detector, int delay, int amostras)
 
 			break;
 		case 3:
-			Serial.print("Sample");
+			Serial.print("x");
 			Serial.print(",");
 			Serial.print("y1");
 			Serial.print(",");
@@ -141,7 +141,7 @@ void generete_values(int detector, int delay, int amostras)
 
 			break;
 		case 5:
-			Serial.print("Sample");
+			Serial.print("x");
 			Serial.print(",");
 			Serial.print("y1");
 			Serial.print(",");
@@ -159,7 +159,7 @@ void generete_values(int detector, int delay, int amostras)
 			Serial.print(",");
 			break;
 		case 6:
-			Serial.print("Sample");
+			Serial.print("x");
 			Serial.print(",");
 			Serial.print("y1");
 			Serial.print(",");
@@ -190,15 +190,17 @@ void generete_values(int detector, int delay, int amostras)
 		{
 			if (steps > abs(x_position))
 			{
+				Serial.println();
 				Serial.print("Finished");
 				Serial.print(" ");
 				Serial.println();
+				steps = steps + 1;
 			}
 			else
 			{
 				Serial.print(steps, 0);
-				Serial.print(",");
-				Serial.print(readphoto10(detector - 1,amostras), 2);
+				Serial.print(" ");
+				Serial.print(readphoto10(detector - 1, amostras), 10);
 				Serial.print(",");
 				steps = steps + 1;
 			}
@@ -208,10 +210,11 @@ void generete_values(int detector, int delay, int amostras)
 		{
 			if (steps > abs((x_position)))
 			{
-				steps = steps + 1;
+				Serial.println();
 				Serial.print("Finished");
 				Serial.print(" ");
 				Serial.println();
+				steps = steps + 1;
 			}
 			else
 			{
@@ -219,8 +222,8 @@ void generete_values(int detector, int delay, int amostras)
 				Serial.print(",");
 				for (int i = 1; i <= detector; i++)
 				{
-					Serial.print(readphoto10(i - 1,amostras), 2);
-					Serial.print(",");
+					Serial.print(readphoto10(i - 1, amostras), 10);
+					Serial.print(" ");
 					if ((i) == detector)
 					{
 					}
@@ -228,25 +231,30 @@ void generete_values(int detector, int delay, int amostras)
 				steps = steps + 1;
 			}
 		}
-		if (steps > abs((x_position)))
+		if (steps > abs((x_position * 2) - 1))
 		{
 		}
 		else
 		{
-			Serial.print(get_temp1(1));
-			Serial.print(",");
-			Serial.print(get_temp2(1));
-			//	Serial.print(",");
-			Serial.println();
+			if (steps > abs((x_position * 2)))
+			{
+			}
+			else
+			{
+				Serial.print(get_temp1(1));
+				Serial.print(" ");
+				Serial.print(get_temp2(1));
+				Serial.println();
+			}
 		}
 	}
 }
 
-void read_sensor(int sensors,int amostras_photo, int amostras_temp)
+void read_sensor(int sensors, int amostras_photo, int amostras_temp)
 {
 	Serial.flush();
 
-	generete_values(sensors,0,amostras_photo);
-	nAmostras=amostras_temp;
+	generete_values(sensors, 0, amostras_photo);
+	nAmostras = amostras_temp;
 	delay(1);
 }
