@@ -1,7 +1,5 @@
 /* 
 
-
-
 #include <Arduino.h>
 #include <Adafruit_ADS1X15.h>
 Adafruit_ADS1X15 ads;
