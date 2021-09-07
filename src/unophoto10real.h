@@ -10,6 +10,7 @@ float volts = 0;   //Valor convertido em volts (V)
 String information = "";
 double x_position, steps, t = 0;
 unsigned long time = 0;
+float axle = 0;
 bool start;
 // Parametros do termistor
 const double beta = 3960.0;
