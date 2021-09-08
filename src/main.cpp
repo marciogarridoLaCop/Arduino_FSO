@@ -4,7 +4,7 @@
 */
 
 #include <SPI.h>
-#include <unophoto10real.h>
+#include <unophoto10step.h>
 //float axle = 0;
 void setup()
 {
