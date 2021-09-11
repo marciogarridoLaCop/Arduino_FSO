@@ -7,10 +7,9 @@ BIBLIOTECA DE LEITURA 10 BITS
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
-double x_position, steps= 0;
+double x_position, steps = 0;
 float axle = 0;
 bool start;
-
 
 float readphoto10(int porta, int amostrasx)
 {
@@ -25,107 +24,109 @@ float readphoto10(int porta, int amostrasx)
 	return volts;
 }
 
-void generete_values(int detector, int delay, int amostras)
+void generete_values(int detector, int delay, int amostras, bool photo, bool temp, bool texto)
 {
 	if (start == false)
 	{
 		start = true;
-		x_position = axle;
-
-		switch (detector)
+		x_position = steps;
+		if (texto == true)
 		{
-		case 1:
-			Serial.print("x");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
+			switch (detector)
+			{
+			case 1:
+				Serial.print("x");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
 
-			break;
-		case 2:
-			Serial.print("x");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("y2");
-			Serial.print(",");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
+				break;
+			case 2:
+				Serial.print("x");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("y2");
+				Serial.print(",");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
 
-			break;
-		case 3:
-			Serial.print("x");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("y2");
-			Serial.print(",");
-			Serial.print("y3");
-			Serial.print(",");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
-			Serial.print(",");
+				break;
+			case 3:
+				Serial.print("x");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("y2");
+				Serial.print(",");
+				Serial.print("y3");
+				Serial.print(",");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
+				Serial.print(",");
 
-			break;
-		case 4:
-			Serial.print("Sample");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("y2");
-			Serial.print(",");
-			Serial.print("y3");
-			Serial.print(",");
-			Serial.print("y4");
-			Serial.print(",");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
+				break;
+			case 4:
+				Serial.print("Sample");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("y2");
+				Serial.print(",");
+				Serial.print("y3");
+				Serial.print(",");
+				Serial.print("y4");
+				Serial.print(",");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
 
-			break;
-		case 5:
-			Serial.print("x");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("y2");
-			Serial.print(",");
-			Serial.print("y3");
-			Serial.print(",");
-			Serial.print("y4");
-			Serial.print(",");
-			Serial.print("y5");
-			Serial.print(",");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
-			Serial.print(",");
-			break;
-		case 6:
-			Serial.print("x");
-			Serial.print(",");
-			Serial.print("y1");
-			Serial.print(",");
-			Serial.print("y2");
-			Serial.print(",");
-			Serial.print("y3");
-			Serial.print(",");
-			Serial.print("y4");
-			Serial.print(",");
-			Serial.print("y5");
-			Serial.print(",");
-			Serial.print("y6");
-			Serial.print("T1");
-			Serial.print(",");
-			Serial.print("T2");
+				break;
+			case 5:
+				Serial.print("x");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("y2");
+				Serial.print(",");
+				Serial.print("y3");
+				Serial.print(",");
+				Serial.print("y4");
+				Serial.print(",");
+				Serial.print("y5");
+				Serial.print(",");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
+				Serial.print(",");
+				break;
+			case 6:
+				Serial.print("x");
+				Serial.print(",");
+				Serial.print("y1");
+				Serial.print(",");
+				Serial.print("y2");
+				Serial.print(",");
+				Serial.print("y3");
+				Serial.print(",");
+				Serial.print("y4");
+				Serial.print(",");
+				Serial.print("y5");
+				Serial.print(",");
+				Serial.print("y6");
+				Serial.print("T1");
+				Serial.print(",");
+				Serial.print("T2");
 
-			break;
+				break;
+			}
+			Serial.println("");
 		}
-		Serial.println("");
 	}
 	{
 		time = millis();
@@ -197,11 +198,11 @@ void generete_values(int detector, int delay, int amostras)
 	}
 }
 
-void read_sensor(int sensors, int amostras_photo, int amostras_temp)
+void read_sensor(int sensors, int amostras_photo, int amostras_temp, bool detector, bool temp, bool somente_numeros)
 {
 	Serial.flush();
 
-	generete_values(sensors, 0, amostras_photo);
+	generete_values(sensors, 0, amostras_photo, detector, temp, somente_numeros);
 	nAmostras = amostras_temp;
 	delay(1);
 }
