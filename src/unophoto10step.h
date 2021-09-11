@@ -147,8 +147,8 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 		if (detector > 1)
 		{
 			
-				Serial.print(x_position + steps, 0);
-				Serial.print(" ");
+			//	Serial.print(x_position + steps, 0);
+			//	Serial.print(" ");
 				for (int i = 1; i <= detector; i++)
 				{
 					Serial.print(readphoto10(i - 1, amostras), 10);
