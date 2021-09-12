@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
-                "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
+                "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
+                "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",
@@ -23,8 +23,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
-                    "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
+                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/include",
+                    "/Users/marciogarrido/Documents/Arduino/arduino_repo/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",

@@ -126,7 +126,6 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 				}
 			}
 	}
-
 	{
 		time = millis();
 		while (millis() < time + delay)
