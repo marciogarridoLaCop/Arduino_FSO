@@ -7,8 +7,8 @@ BIBLIOTECA DE LEITURA 10 BITS
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
-double x_position, steps = 0;
-float axle = 0;
+String message ="No one parameter selected";
+double steps = 0;
 bool start;
 
 float readphoto10(int porta, int amostrasx)
@@ -29,7 +29,6 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 	if (start == false)
 	{
 		start = true;
-		x_position = steps;
 		if (texto == true)
 		{
 			switch (detector)
@@ -134,40 +133,17 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 		{
 			//Aguarda sem parar o processamento
 		}
-		if (detector == 1)
+		if (detector == 1 and photo == true)
 		{
-			if (steps > abs(x_position))
-			{
-				Serial.println();
-				Serial.print("Finished");
-				Serial.print(" ");
-				Serial.println();
-				steps = steps + 1;
-			}
-			else
-			{
-				Serial.print(steps, 0);
-				Serial.print(" ");
+			
 				Serial.print(readphoto10(detector - 1, amostras), 10);
-				Serial.print(",");
+				Serial.print(" ");
 				steps = steps + 1;
-			}
 		}
 
-		if (detector > 1)
+		if (detector > 1 and photo == true)
 		{
-			if (steps > abs((x_position)))
-			{
-				Serial.println();
-				Serial.print("Finished");
-				Serial.print(" ");
-				Serial.println();
-				steps = steps + 1;
-			}
-			else
-			{
-				Serial.print(steps, 0);
-				Serial.print(",");
+			
 				for (int i = 1; i <= detector; i++)
 				{
 					Serial.print(readphoto10(i - 1, amostras), 10);
@@ -177,31 +153,24 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 					}
 				}
 				steps = steps + 1;
-			}
-		}
-		if (steps > abs((x_position * 2) - 1))
+			
+		}	
+		if (temp== true)
 		{
-		}
-		else
-		{
-			if (steps > abs((x_position * 2)))
-			{
-			}
-			else
-			{
+				
 				Serial.print(get_temp1(1));
 				Serial.print(" ");
 				Serial.print(get_temp2(1));
-				Serial.println();
-			}
 		}
+		if (photo == false and temp == false)
+		Serial.print(message);
 	}
+	Serial.println();
 }
 
 void read_sensor(int sensors, int amostras_photo, int amostras_temp, bool detector, bool temp, bool somente_numeros)
 {
 	Serial.flush();
-
 	generete_values(sensors, 0, amostras_photo, detector, temp, somente_numeros);
 	nAmostras = amostras_temp;
 	delay(1);

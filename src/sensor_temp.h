@@ -19,7 +19,7 @@ const double rx = r0 * exp(-beta / t0);
 // Parâmetros do circuito
 const double vcc = 4.95;
 const double R = 100000.0;
-int nAmostras = 50;
+int nAmostras;
 
 float get_temp1(int atraso)
 {

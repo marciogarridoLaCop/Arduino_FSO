@@ -8,5 +8,10 @@
 			"path": "../../../../../Dissertação/FSO/Arduino/FSO Heat Flow Measurements/arduino_repo"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"string": "cpp",
+			"iosfwd": "cpp"
+		}
+	}
 }

@@ -7,9 +7,10 @@ BIBLIOTECA DE LEITURA 10 BITS
 int readvalue = 0; //Ler valor porta
 float volts = 0;   //Valor convertido em volts (V)
 String information = "";
-double x_position, steps = 0;
-float axle = 0;
+String message ="No one parameter selected";
+double steps = 0;
 bool start;
+
 
 float readphoto10(int porta, int amostrasx)
 {
@@ -29,7 +30,6 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 	if (start == false)
 	{
 		start = true;
-		x_position = steps;
 		if (texto==true)
 			if ((photo==true )and (temp==true))
 			{
@@ -132,22 +132,18 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 		{
 			//Aguarda sem parar o processamento
 		}
-		if (detector == 1)
+		if (detector == 1 and photo == true )
 		{
 			
-				Serial.print(x_position + steps - 1, 0);
-				Serial.print(" ");
 				Serial.print(readphoto10(detector - 1, amostras), 10);
 				Serial.print(" ");
 				steps = steps + 1;
 			
 		}
 
-		if (detector > 1)
+		if (detector > 1 and photo == true)
 		{
 			
-			//	Serial.print(x_position + steps, 0);
-			//	Serial.print(" ");
 				for (int i = 1; i <= detector; i++)
 				{
 					Serial.print(readphoto10(i - 1, amostras), 10);
@@ -159,15 +155,15 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 				steps = steps + 1;
 			
 		}	
-		else
+		if (temp == true)
 		{
-		
 				Serial.print(get_temp1(1));
 				Serial.print(" ");
 				Serial.print(get_temp2(1));
-				Serial.println();
-		
+				
 		}
+		if (photo == false and temp == false)
+		Serial.print(message);
 	}
 	Serial.println();
 }
