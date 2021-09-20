@@ -164,7 +164,7 @@ void generete_values(int detector, int delay, int amostras, bool photo, bool tem
 	Serial.println();
 }
 
-void read_sensor(bool simulated,int sensors, int amostras_photo, int amostras_temp, bool detector, bool temp, bool somente_numeros)
+void read_sensor(bool simulated, int sensors, int amostras_photo, int amostras_temp, bool detector, bool temp, bool somente_numeros)
 {
 	if (simulated == true)
 	{

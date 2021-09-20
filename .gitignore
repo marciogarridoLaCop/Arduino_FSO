@@ -23,6 +23,14 @@ dist/
 target/
 dist/
 
+# pio
+.pio
+
+# vscode
+.vscode
+
+include/
+
 # JetBrains IDE
 .idea/
 
@@ -48,3 +56,35 @@ Thumbs.db
 *.mov
 *.wmv
 
+.pio/build/project.checksum
+.pio/build/project.checksum
+.pio/build/megaatmega1280/.sconsign39.dblite
+.pio/build/megaatmega1280/firmware.hex
+.pio/build/megaatmega1280/libFrameworkArduino.a
+.pio/build/megaatmega1280/FrameworkArduino/abi.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/CDC.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/HardwareSerial.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/HardwareSerial0.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/HardwareSerial1.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/HardwareSerial2.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/HardwareSerial3.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/hooks.c.o
+.pio/build/megaatmega1280/FrameworkArduino/IPAddress.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/main.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/new.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/PluggableUSB.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/Print.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/Stream.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/Tone.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/USBCore.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/WInterrupts.c.o
+.pio/build/megaatmega1280/FrameworkArduino/wiring_analog.c.o
+.pio/build/megaatmega1280/FrameworkArduino/wiring_digital.c.o
+.pio/build/megaatmega1280/FrameworkArduino/wiring_pulse.c.o
+.pio/build/megaatmega1280/FrameworkArduino/wiring_shift.c.o
+.pio/build/megaatmega1280/FrameworkArduino/wiring.c.o
+.pio/build/megaatmega1280/FrameworkArduino/WMath.cpp.o
+.pio/build/megaatmega1280/FrameworkArduino/WString.cpp.o
+.pio/build/megaatmega1280/libc84/libSPI.a
+.pio/build/megaatmega1280/libc84/SPI/SPI.cpp.o
+.pio/build/megaatmega1280/src/main.cpp.o
