@@ -4,7 +4,7 @@
 */
 
 #include <SPI.h>
-#include <unophoto10step.h>
+#include <unophoto.h>
 void setup()
 {
 	Serial.begin(9600);
@@ -15,7 +15,7 @@ void setup()
 void loop()
 {
 	if (Serial.available()){
-	//Exemplo read_sensor(4,5,50); até 4 sensores ópticos, média de 5 amostras do phototransistor e média de 50 amostras de cada thermistor, executar leitura dos detectores, executar leitura do thermistores, printar textos
-	read_sensor(4,1,20,true,false,false);
+	//Exemplo read_sensor(false,4,1,20,true,false,false); leitura seré por steps, até 4 sensores ópticos, média de 5 amostras do phototransistor e média de 50 amostras de cada thermistor, executar leitura dos detectores, executar leitura do thermistores, printar textos
+	read_sensor(false,4,1,20,true,false,false);
 	}
 }
