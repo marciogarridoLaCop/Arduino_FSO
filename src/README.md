@@ -14,8 +14,6 @@ https://platformio.org/lib/show/1363/Statistic/installation
 #include <unophoto.h> 
 #include <Statistic.h> 
 #include <sensor_temp.h> 
-
-
 bool simulated;  
 void setup()
 {
@@ -28,9 +26,7 @@ void loop()
 {
   if (Serial.available()) hearing port 
   {
-   
-
-	myStats[0].add(readphoto(0));
+   myStats[0].add(readphoto(0));
     myStats[1].add(readphoto(1));
     myStats[2].add(readphoto(2));
     myStats[3].add(readphoto(3));
@@ -94,7 +90,5 @@ void loop()
     }
   }
 }
-
-
 #
 
