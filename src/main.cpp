@@ -37,6 +37,7 @@ void setup()
 
 void loop()
 {
+  if (Serial.available()){
   double v = (vcc * analogRead(pinTermistor1) / 1024.0);
 	double rt = (vcc * R) / v - R;
   t = beta / log(rt / rx);
@@ -60,5 +61,5 @@ void loop()
     myStats.clear();
     myStats2.clear();
   }
-
+  }
 }
