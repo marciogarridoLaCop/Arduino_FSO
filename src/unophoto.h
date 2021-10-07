@@ -11,13 +11,9 @@ String message = "No one parameter selected";
 double steps = 0;
 bool start;
 
-float readphoto10(int porta, int amostrasx)
+float readphoto(int porta)
 {
-	readvalue = 0;
-	for (int i = 0; i < amostrasx; i++)
-	{
-		readvalue += analogRead(porta) / amostrasx;
-	}
+	readvalue = analogRead(porta);
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)
 		volts = 0;
@@ -26,15 +22,11 @@ float readphoto10(int porta, int amostrasx)
 
 void generete_values(int detector, int amostras)
 {
-	//time = millis();
-	//while (millis() < time + delay)
-	{
-		//Aguarda sem parar o processamento
-	}
+	
 	if (detector == 1 )
 	{
 
-		Serial.print(readphoto10(detector - 1, amostras), 10);
+		Serial.print(readphoto(detector), 10);
 		Serial.print(" ");
 		steps = steps + 1;
 	}
@@ -44,7 +36,7 @@ void generete_values(int detector, int amostras)
 
 		for (int i = 1; i <= detector; i++)
 		{
-			Serial.print(readphoto10(i - 1, amostras), 10);
+			Serial.print(readphoto(i), 10);
 			Serial.print(" ");
 			if ((i) == detector)
 			{
