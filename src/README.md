@@ -33,7 +33,7 @@ void loop()
     myStats[4].add(get_temp1());
     myStats[5].add(get_temp2());
 
-    chech if is simulated or not 
+  
     if (simulated == true)
     {
       if (start == false)
