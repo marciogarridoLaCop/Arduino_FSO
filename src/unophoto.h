@@ -52,7 +52,7 @@ void read_sensor(bool simulated, int sensors, int amostras_photo)
 	if (simulated == true)
 	{
 		if (start == false)
-			Serial.flush();
+		Serial.flush();
 		char character;
 		information = "";
 		while (Serial.available() > 0)
