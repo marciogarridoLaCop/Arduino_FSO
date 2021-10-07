@@ -13,7 +13,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial.flush();
-  simulated = true;
+  simulated = false;
   Serial.println("Press enter to read values");
 }
 void loop()
