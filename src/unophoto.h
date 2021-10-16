@@ -16,7 +16,7 @@ float readphoto(int porta)
 	readvalue = analogRead(porta);
 	volts = readvalue * (5.0 / 1023.0); //Converter valores em volts
 	if (volts > 5)
-		volts = 0;
+  		volts = 0;
 	return volts;
 }
 

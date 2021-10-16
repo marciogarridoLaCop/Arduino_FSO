@@ -6,9 +6,10 @@
 #include <unophoto.h>
 #include <Statistic.h>
 #include <sensor_temp.h>
-Statistic myStats[5];
+Statistic myStats[6];
 
 bool simulated;
+int interacoes;
 void setup()
 {
   Serial.begin(115200);
@@ -25,8 +26,7 @@ void loop()
     myStats[2].add(readphoto(2));
     myStats[3].add(readphoto(3));
     myStats[4].add(get_temp1());
-    myStats[5].add(get_temp2());
-
+    myStats[5].add(get_temp2());    
     if (simulated == true)
     {
       if (start == false)
@@ -40,9 +40,11 @@ void loop()
         if (character == '\n')
         {
           // valor de amostras lidas e posterior informação de minimo,maxima e média
-          if (myStats[0].count() == 10)
+          if (myStats[0].count() == 100)
           {
-
+/*
+varredura dos indices dos sensores
+*/
             for (int i = 0; i < 5; i++)
             {
               Serial.print(myStats[i].minimum(), 4);
@@ -56,7 +58,7 @@ void loop()
             Serial.println();
           }
           information.concat(character);
-          delay(10);
+          delay(1000);
         }
       }
     }
@@ -65,20 +67,30 @@ void loop()
     {
       Serial.flush();
       // valor de amostras lidas e posterior informação de minimo,maxima e média
-      if (myStats[0].count() == 10)
+      if (myStats[0].count() == 20)
       {
-
+/*
+varredura dos indices dos sensores
+*/
         for (int i = 0; i <= 5; i++)
         {
-          Serial.print(myStats[i].minimum(), 4);
-          Serial.print(" ");
-          Serial.print(myStats[i].maximum(), 4);
-          Serial.print(" ");
+       //   Serial.print(myStats[i].minimum(), 4);
+       //   Serial.print(" ");
+       //   Serial.print(myStats[i].maximum(), 4);
+       //   Serial.print(" ");
           Serial.print(myStats[i].average(), 4);
           Serial.print(" ");
         }
+        
         myStats[0].clear();
-        Serial.println();
+        myStats[1].clear();
+        myStats[2].clear();
+        myStats[3].clear();
+        myStats[4].clear();
+        myStats[5].clear();
+      
+       Serial.println();
+      
       }
     }
   }

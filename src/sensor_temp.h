@@ -3,8 +3,8 @@ MARCIO GARRIDO 2021
 BIBLIOTECA DE TEMERATURA
 */
 
-const int pinTermistor1 = A4;
-const int pinTermistor2 = A5;
+const int pinTermistor1 = A6;
+const int pinTermistor2 = A7;
 // Parâmetros do termistor
 double t, t1, t2 = 0;
 unsigned long time = 0;
