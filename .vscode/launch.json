@@ -29,6 +29,16 @@
             "projectEnvName": "megaatmega1280",
             "toolchainBinDir": "/Users/marciogarrido/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/Volumes/Macintosh HD/Arduino/arduino_repo/.pio/build/megaatmega1280/firmware.elf",
+            "projectEnvName": "megaatmega1280",
+            "toolchainBinDir": "/Users/marciogarrido/.platformio/packages/toolchain-atmelavr/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "loadMode": "manual"
         }
     ]
 }
