@@ -10,13 +10,14 @@
             "includePath": [
                 "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
                 "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
-                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Statistic-0.4.3",
-                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Thermistor3",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Statistic-0.4.3",
                 "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/Users/marciogarrido/.platformio/packages/tool-unity",
                 ""
@@ -26,20 +27,21 @@
                 "path": [
                     "/Volumes/Macintosh HD/Arduino/arduino_repo/include",
                     "/Volumes/Macintosh HD/Arduino/arduino_repo/src",
-                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Statistic-0.4.3",
-                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Thermistor3",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/variants/mega",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Statistic-0.4.3",
                     "/Users/marciogarrido/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/Users/marciogarrido/.platformio/packages/tool-unity",
                     ""
                 ]
             },
             "defines": [
-                "PLATFORMIO=50201",
+                "PLATFORMIO=50203",
                 "ARDUINO_AVR_MEGA",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",

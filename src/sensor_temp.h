@@ -4,7 +4,7 @@ BIBLIOTECA DE TEMERATURA
 */
 
 const int pinTermistor1 = A6;
-const int pinTermistor2 = A7;
+const int pinTermistor2 = A10;
 // Parâmetros do termistor
 double t, t1, t2 = 0;
 unsigned long time = 0;

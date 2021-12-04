@@ -1,10 +1,11 @@
 #include <Thermistor3.h>
+
 // begin object Thermistor in pin 0
 Thermistor temp1(7);
 Thermistor temp2(6);
 
 // value of resistor in ohms
-double resistor = 9700;
+double resistor = 10000;
 
 int readvalue, readvalue1, readvalue2, readvalue3, readvalue4 = 0; // Ler valor porta
 float volts = 0;
@@ -14,7 +15,7 @@ double average1 = 0;
 double average2 = 0;
 
 // number of samples
-int sample = 500;
+int sample = 1000;
 
 void setup()
 {
@@ -55,9 +56,9 @@ void loop()
 
   average1 = average1 / sample;
   average2 = average2 / sample;
-  Serial.print(average1, 0);
+  Serial.print(average1, 1);
   Serial.print(" ");
-  Serial.print(average2, 0);
+  Serial.print(average2, 1);
   Serial.println();
 
   delay(10);
