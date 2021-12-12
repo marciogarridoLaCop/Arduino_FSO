@@ -1,0 +1,7 @@
+[env:megaatmega1280]
+platform = atmelavr
+board = megaatmega1280
+framework = arduino
+monitor_speed = 115200
+[platformio]
+description = Medidas de Fluxo de Calor
