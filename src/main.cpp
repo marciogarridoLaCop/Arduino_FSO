@@ -3,55 +3,68 @@
 // begin object Thermistor in pin 0
 Thermistor temp1(7);
 Thermistor temp2(6);
-
+int hotwire_port = 9; 
+double temperatura1, temperatura2 = 0;
 // value of resistor in ohms
 double resistor = 10000;
 
-int readvalue = 0; // Ler valor porta
-float volts = 0;
+int readvalue,read2 = 0; // Ler valor porta
+float volts,velocidade,percentual = 0;
 
 
 // number of samples
-<<<<<<< HEAD
-int sample = 1000;
-=======
-int sample = 1;
->>>>>>> 8b74db9f76ae5f8b4e4b665459b4416bb40a54cd
+int sample = 15;
 
 void setup()
 {
-  Serial.begin(2000000);
+  pinMode(hotwire_port, INPUT);
+  Serial.begin(115200);
+  
 }
 
 void loop()
 {
+
   readvalue = analogRead(0); 
-  Serial.print(readvalue * (5.0 / 1023.0);, 2);
+  Serial.print(readvalue * (5.0 / 1023.0), 4);
   Serial.print(" ");
 
   readvalue = analogRead(1);
-  Serial.print(readvalue * (5.0 / 1023.0);, 2);
+  Serial.print(readvalue * (5.0 / 1023.0), 4);
   Serial.print(" ");
 
   readvalue = analogRead(2);
-  Serial.print(readvalue * (5.0 / 1023.0);, 2);
+  Serial.print(readvalue * (5.0 / 1023.0), 4);
   Serial.print(" ");
 
   readvalue = analogRead(3);
-  Serial.print(readvalue * (5.0 / 1023.0);, 2);
-  Serial.print(" ");
-<<<<<<< HEAD
+  Serial.print(readvalue * (5.0 / 1023.0), 4);
+  
+  for (int index = 0; index < sample; index++)
+  {
+      double temperature1 = temp1.getTemp(resistor);
+      temperatura1 += temperature1;
+      double temperature2 = temp2.getTemp(resistor);
+      temperatura2 += temperature2;
+      // a small delay for read again
+      delayMicroseconds(1);
+    }
 
-  average1 = average1 / sample;
-  average2 = average2 / sample;
-  Serial.print(average1, 1);
+    
   Serial.print(" ");
-  Serial.print(average2, 1);
-=======
- 
-  Serial.print(temp1.getTemp(resistor);, 0);
+  Serial.print(temperatura1 = temperatura1 / sample, 0);
   Serial.print(" ");
-  Serial.print(temp2.getTemp(resistor);, 0);
->>>>>>> 8b74db9f76ae5f8b4e4b665459b4416bb40a54cd
+  Serial.print(temperatura2 = temperatura2 / sample, 0);
+  Serial.print(" ");
+
+readvalue = analogRead(hotwire_port);
+  volts = readvalue * (5.2 / 1023.0);
+  
+  velocidade=((volts-1)/(5-1))*39.8+0.1;
+   Serial.print(velocidade, 2);
+    Serial.print(" ");
+    Serial.println();
   Serial.println();
+  
+
 }
