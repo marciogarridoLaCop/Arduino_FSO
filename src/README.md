@@ -3,62 +3,35 @@
 
 ### Firsts steps to configure your application ###
 
+simulated (false or true). When do you set for true, the code will run until someone press enter to run again. 
+If the parameter are defined with false, it will run without steping
 
-    if (simulated == true)
+  void loop()
+{
+    if (Serial.available())
     {
-      if (start == false)
-      Serial.flush();
-      char character;
-      information = "";
-      while (Serial.available() > 0)
-      {
-        character = Serial.read();
-        // check if return keyboard ware pressed
-        if (character == '\n')
+        if (simulated == true)
         {
-          // valor de amostras lidas e posterior informação de minimo,maxima e média
-          if (myStats[0].count() == 10)
-          {
-
-            for (int i = 0; i < 5; i++)
+            Serial.flush();
+            char character;
+            information = "";
+            while (Serial.available() > 0)
             {
-              Serial.print(myStats[i].minimum(), 4);
-              Serial.print(" ");
-              Serial.print(myStats[i].maximum(), 4);
-              Serial.print(" ");
-              Serial.print(myStats[i].average(), 4);
-              Serial.print(" ");
+                character = Serial.read();
+                // check if return keyboard ware pressed
+                if (character == '\n')
+                {
+                    printar();
+                }
+                information.concat(character);
+                delay(10);
             }
-            myStats[0].clear();
-            Serial.println();
-          }
-          information.concat(character);
-          delay(10);
         }
-      }
-    }
-
-    else
-    {
-      Serial.flush();
-      // valor de amostras lidas e posterior informação de minimo,maxima e média
-      if (myStats[0].count() == 10)
-      {
-
-        for (int i = 0; i <= 5; i++)
+        else
         {
-          Serial.print(myStats[i].minimum(), 4);
-          Serial.print(" ");
-          Serial.print(myStats[i].maximum(), 4);
-          Serial.print(" ");
-          Serial.print(myStats[i].average(), 4);
-          Serial.print(" ");
+            printar();
         }
-        myStats[0].clear();
-        Serial.println();
-      }
     }
-  }
 }
 #
 
